@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessed Rose A. Advincula | Job Application Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            50: '#f4f6ff',
+                            500: '#4f46e5',
+                            600: '#4338ca',
+                            700: '#3730a3',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.4);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-slate-900/85 border-b border-slate-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo & Name -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/20">
+                        BA
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg text-white block leading-tight">Blessed Rose Advincula</span>
+                        <span id="viewModeBadge" class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-medium inline-block border border-emerald-500/30">
+                            Employer View (Read-Only)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 text-sm font-medium">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Home</a>
+                    <a href="#personal" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Personal Info</a>
+                    <a href="#education" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Education</a>
+                    <a href="#experience" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Experience</a>
+                    <a href="#skills" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Skills</a>
+                    <a href="#projects" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">Projects</a>
+                    <a href="#references" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">References</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-indigo-400 hover:text-indigo-300 hover:bg-indigo-950/50 transition font-semibold">Contact</a>
+                </nav>
+
+                <!-- Action Controls: Copy Link, Dev Mode & Mobile Menu -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <button onclick="copyPortfolioLink()" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-indigo-500/30 transition flex items-center gap-1.5 shadow" title="Copy Portfolio Link">
+                        <i class="fa-solid fa-link"></i>
+                        <span class="hidden sm:inline">Copy Link</span>
+                    </button>
+
+                    <button id="modeToggleBtn" onclick="toggleDeveloperMode()" class="px-3.5 py-2 text-xs sm:text-sm font-medium rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white transition flex items-center gap-2 shadow-lg shadow-indigo-600/30">
+                        <i id="modeIcon" class="fa-solid fa-lock"></i>
+                        <span id="modeBtnText">Developer Mode</span>
+                    </button>
+
+                    <button id="mobileMenuBtn" onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobileNav" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="#home" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Home</a>
+            <a href="#personal" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Personal Info</a>
+            <a href="#education" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Education</a>
+            <a href="#experience" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Experience</a>
+            <a href="#skills" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Skills</a>
+            <a href="#projects" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Projects</a>
+            <a href="#references" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">References</a>
+            <a href="#contact" onclick="closeMobileNav()" class="block px-3 py-2 rounded-md text-indigo-400 hover:bg-slate-800 font-semibold">Contact</a>
+        </div>
+    </header>
+
+    <div id="devModeBanner" class="hidden bg-amber-500/10 border-b border-amber-500/30 px-4 py-2 text-center text-xs sm:text-sm text-amber-300 flex items-center justify-between max-w-7xl mx-auto w-full">
+        <div class="flex items-center gap-2 mx-auto">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span><strong>Developer Mode Unlocked:</strong> You can edit any information below. Click <strong>"Save All Changes"</strong> to sync across devices.</span>
+        </div>
+        <button onclick="saveAllDataToCloud()" class="ml-2 bg-amber-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg hover:bg-amber-400 transition text-xs shadow flex items-center gap-1">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Save All Changes
+        </button>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <section id="home" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-10 -top-10 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open for Job Opportunities & Academic Programs
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                            Hi, I'm <span class="gradient-text" id="displayHeroName">Blessed Rose A. Advincula</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl" id="displayHeroSummary">
+                            A motivated, detail-oriented, and ambitious high school student based in San Narciso, Zambales. Equipped with strong technical, analytical, and communication skills, ready to contribute effectively to dynamic team environments.
+                        </p>
+
+                        <!-- Quick Overview Stats -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+                            <div class="p-3 sm:p-4 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                                <span class="text-xs text-slate-400 block uppercase font-medium">Location</span>
+                                <span class="text-sm sm:text-base font-semibold text-white" id="statLocation">San Narciso, Zambales</span>
+                            </div>
+                            <div class="p-3 sm:p-4 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                                <span class="text-xs text-slate-400 block uppercase font-medium">Languages</span>
+                                <span class="text-sm sm:text-base font-semibold text-white" id="statLanguages">English & Tagalog</span>
+                            </div>
+                            <div class="p-3 sm:p-4 rounded-xl bg-slate-800/60 border border-slate-700/50 col-span-2 sm:col-span-1">
+                                <span class="text-xs text-slate-400 block uppercase font-medium">Status</span>
+                                <span class="text-sm sm:text-base font-semibold text-emerald-400">Ready for Opportunities</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#contact" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Contact Me
+                            </a>
+                            <a href="#projects" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold transition flex items-center gap-2">
+                                <i class="fa-solid fa-folder-open"></i> View Projects
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Photo Container -->
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center">
+                        <div class="relative group">
+                            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl overflow-hidden border-2 border-indigo-500/40 shadow-2xl bg-slate-800 flex items-center justify-center relative">
+                                <img id="heroAvatarImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Blessed Rose Advincula" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Blessed+Rose'">
+                            </div>
+                            <!-- Developer Photo Upload Trigger -->
+                            <div id="devAvatarEdit" class="hidden mt-3 text-center">
+                                <label class="cursor-pointer text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-indigo-500/40 px-3 py-1.5 rounded-xl inline-flex items-center gap-1.5 transition shadow">
+                                    <i class="fa-solid fa-camera"></i> Change Profile Photo
+                                    <input type="file" id="heroAvatarInput" accept="image/*" class="hidden" onchange="uploadHeroAvatar(event)">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="personal" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-id-card text-indigo-400"></i> Personal Information
+                    </h2>
+                    <p class="text-sm text-slate-400">Core personal details for resume and job application</p>
+                </div>
+            </div>
+
+            <!-- Employer View (Read-Only) -->
+            <div id="personalInfoView" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Full Name</span>
+                    <p class="text-lg font-bold text-white" id="valName">Blessed Rose A. Advincula</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Age & Birthday</span>
+                    <p class="text-lg font-bold text-white"><span id="valAge">16</span> years old <span class="text-slate-400 text-sm font-normal">(<span id="valBirthday">March 24 2010</span>)</span></p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Gender & Civil Status</span>
+                    <p class="text-lg font-bold text-white"><span id="valGender">Female</span> • <span id="valCivilStatus">Single</span></p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Current Address</span>
+                    <p class="text-base font-semibold text-white flex items-center gap-2" id="valAddress">
+                        <i class="fa-solid fa-location-dot text-indigo-400"></i> San Narciso, Zambales, Philippines
+                    </p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Languages Spoken</span>
+                    <p class="text-base font-semibold text-white" id="valLanguages">English, Tagalog (Fluent)</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Phone Number</span>
+                    <p class="text-base font-semibold text-emerald-400" id="valPhone">09702067504</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1 md:col-span-2">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Email Address</span>
+                    <p class="text-base font-semibold text-indigo-300 break-all" id="valEmail">advinculablessedrose@gmail.com</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl glass-card-hover space-y-1">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Messenger Handle</span>
+                    <a id="valMessengerLink" href="https://m.me/desseldesor.advincula" target="_blank" class="text-sm font-semibold text-blue-400 hover:underline flex items-center gap-1.5 truncate">
+                        <i class="fa-brands fa-facebook-messenger"></i> m.me/desseldesor.advincula
+                    </a>
+                </div>
+            </div>
+
+            <!-- Developer Edit Form (Editable inputs) -->
+            <div id="personalInfoEditForm" class="hidden glass-card p-6 rounded-2xl border-indigo-500/40 space-y-4">
+                <h3 class="text-base font-bold text-amber-400 flex items-center gap-2">
+                    <i class="fa-solid fa-pen"></i> Edit Personal Information
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Full Name</label>
+                        <input type="text" id="inputName" value="Blessed Rose A. Advincula" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Age</label>
+                        <input type="number" id="inputAge" value="16" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Birthday</label>
+                        <input type="text" id="inputBirthday" value="March 24 2010" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Gender</label>
+                        <select id="inputGender" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                            <option value="Female" selected>Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Civil Status</label>
+                        <input type="text" id="inputCivilStatus" value="Single" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Phone Number</label>
+                        <input type="text" id="inputPhone" value="09702067504" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Email Address</label>
+                        <input type="email" id="inputEmail" value="advinculablessedrose@gmail.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Messenger Handle</label>
+                        <input type="text" id="inputMessenger" value="m.me/desseldesor.advincula" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Current Address</label>
+                        <input type="text" id="inputAddress" value="San Narciso, Zambales, Philippines" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                    <div class="sm:col-span-2 lg:col-span-3">
+                        <label class="block text-xs text-slate-400 mb-1">Languages Spoken</label>
+                        <input type="text" id="inputLanguages" value="English, Tagalog (Fluent)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-indigo-400"></i> Educational Background
+                    </h2>
+                    <p class="text-sm text-slate-400">Academic institutions, years of tenure, and honors received</p>
+                </div>
+                <button id="addEducationBtn" onclick="addEducationCard()" class="hidden px-3.5 py-1.5 text-xs bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition items-center gap-1 shadow">
+                    <i class="fa-solid fa-plus"></i> Add Education
+                </button>
+            </div>
+
+            <div id="educationList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Dynamically Rendered -->
+            </div>
+        </section>
+
+        <section id="experience" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-briefcase text-indigo-400"></i> Work & Organizational Experience
+                    </h2>
+                    <p class="text-sm text-slate-400">Company / Organization names, tenure, and positions held</p>
+                </div>
+                <button id="addExpBtn" onclick="addExperienceCard()" class="hidden px-3.5 py-1.5 text-xs bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition items-center gap-1 shadow">
+                    <i class="fa-solid fa-plus"></i> Add Experience
+                </button>
+            </div>
+
+            <div id="experienceList" class="space-y-4">
+                <!-- Dynamically Rendered -->
+            </div>
+        </section>
+
+        <section id="skills" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-lightbulb text-indigo-400"></i> Skills & Talents
+                    </h2>
+                    <p class="text-sm text-slate-400">Key capabilities relevant to prospective job roles</p>
+                </div>
+                <button id="addSkillBtn" onclick="addSkillItem()" class="hidden px-3.5 py-1.5 text-xs bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition items-center gap-1 shadow">
+                    <i class="fa-solid fa-plus"></i> Add Skill
+                </button>
+            </div>
+
+            <div id="skillsContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <!-- Dynamically Rendered -->
+            </div>
+        </section>
+
+        <section id="projects" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-diagram-project text-indigo-400"></i> Projects Accomplished
+                    </h2>
+                    <p class="text-sm text-slate-400">Project title, description, and photo/video proofs</p>
+                </div>
+                <button id="addProjectBtn" onclick="openAddProjectModal()" class="hidden px-4 py-2 text-xs sm:text-sm bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition flex items-center gap-2 shadow-lg shadow-indigo-600/20">
+                    <i class="fa-solid fa-plus"></i> Upload New Project
+                </button>
+            </div>
+
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Dynamically Rendered -->
+            </div>
+        </section>
+
+        <section id="references" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <i class="fa-solid fa-users text-indigo-400"></i> Character References
+                    </h2>
+                    <p class="text-sm text-slate-400">Educators and mentors who can vouch for skills and work ethic</p>
+                </div>
+                <button id="addRefBtn" onclick="addReferenceCard()" class="hidden px-3.5 py-1.5 text-xs bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition items-center gap-1 shadow">
+                    <i class="fa-solid fa-plus"></i> Add Reference
+                </button>
+            </div>
+
+            <div id="referencesList" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Dynamically Rendered -->
+            </div>
+        </section>
+
+        <section id="contact" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden border-2 border-indigo-500/30 shadow-2xl">
+                <div class="text-center max-w-2xl mx-auto space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-wider">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Connect & Work Together</h2>
+                    <p class="text-slate-300 text-sm sm:text-base">
+                        Feel free to contact me directly through any of the channels below for employment, internship, or academic opportunities.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
+                    <!-- Phone Contact -->
+                    <a href="tel:09702067504" class="glass-card p-6 rounded-2xl text-center glass-card-hover block space-y-2 border-slate-700/60">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Call / SMS</h4>
+                        <p class="text-xs text-emerald-300 font-medium" id="contactPhone">09702067504</p>
+                    </a>
+
+                    <!-- Email Contact -->
+                    <a href="mailto:advinculablessedrose@gmail.com" class="glass-card p-6 rounded-2xl text-center glass-card-hover block space-y-2 border-slate-700/60">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Email Me</h4>
+                        <p class="text-xs text-indigo-300 font-medium truncate px-1" id="contactEmail">advinculablessedrose@gmail.com</p>
+                    </a>
+
+                    <!-- Messenger Contact -->
+                    <a href="https://m.me/desseldesor.advincula" target="_blank" class="glass-card p-6 rounded-2xl text-center glass-card-hover block space-y-2 border-slate-700/60">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-brands fa-facebook-messenger"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Messenger</h4>
+                        <p class="text-xs text-blue-300 font-medium truncate px-1" id="contactMessenger">m.me/desseldesor.advincula</p>
+                    </a>
+                </div>
+
+                <div class="text-center mt-8 pt-6 border-t border-slate-800">
+                    <button onclick="copyPortfolioLink()" class="px-6 py-3 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-300 border border-indigo-500/40 font-semibold text-xs sm:text-sm transition inline-flex items-center gap-2">
+                        <i class="fa-solid fa-share-nodes"></i> Copy My Portfolio Link to Share
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>&copy; <span id="year">2026</span> Blessed Rose A. Advincula. All Rights Reserved.</p>
+            <p class="text-slate-600">Job Application Portfolio &bull; San Narciso, Zambales, Philippines</p>
+        </div>
+    </footer>
+
+    <!-- PASSWORD VERIFICATION MODAL -->
+    <div id="passwordModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full rounded-2xl p-6 sm:p-8 space-y-5 border-2 border-indigo-500/40 shadow-2xl">
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-indigo-600/30 text-indigo-400 flex items-center justify-center text-2xl border border-indigo-500/30">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">Developer Mode Login</h3>
+                <p class="text-xs text-slate-400">Enter developer password to unlock editing capabilities and media upload options.</p>
+            </div>
+
+            <form onsubmit="verifyDevPassword(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Developer Password</label>
+                    <input type="password" id="devPasswordInput" placeholder="Enter password..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none">
+                </div>
+
+                <div id="passwordError" class="hidden text-xs text-red-400 bg-red-950/50 border border-red-800 p-2.5 rounded-lg text-center">
+                    Incorrect password. Access denied.
+                </div>
+
+                <div class="flex gap-3">
+                    <button type="button" onclick="closePasswordModal()" class="w-1/2 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-semibold transition">
+                        Cancel
+                    </button>
+                    <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition shadow-lg shadow-indigo-600/30">
+                        Unlock
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADD PROJECT MODAL -->
+    <div id="projectModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-6 sm:p-8 space-y-5 border-2 border-indigo-500/40 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-up text-indigo-400"></i> Add New Project Proof
+                </h3>
+                <button onclick="closeAddProjectModal()" class="text-slate-400 hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="handleSaveNewProject(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Project Title</label>
+                    <input type="text" id="newProjTitle" required placeholder="e.g. Environmental Youth Research" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:border-indigo-500 outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Project Description</label>
+                    <textarea id="newProjDesc" required rows="3" placeholder="Describe responsibilities, goals, and outcomes..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:border-indigo-500 outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Upload Photo or Video Proof</label>
+                    <input type="file" id="newProjMediaFile" accept="image/*,video/*" onchange="previewMediaUpload(event)" class="w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500 cursor-pointer">
+                    <p class="text-[10px] text-slate-500 mt-1">Select an image (PNG, JPG) or video clip proof.</p>
+                </div>
+
+                <!-- Media Preview -->
+                <div id="mediaPreviewContainer" class="hidden rounded-xl overflow-hidden bg-slate-900 border border-slate-800 h-40 flex items-center justify-center">
+                    <img id="imagePreview" src="" class="hidden w-full h-full object-cover">
+                    <video id="videoPreview" controls class="hidden w-full h-full object-cover"></video>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Completion Year</label>
+                    <input type="text" id="newProjYear" placeholder="e.g. 2024" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:border-indigo-500 outline-none">
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <button type="button" onclick="closeAddProjectModal()" class="w-1/2 py-2.5 rounded-xl bg-slate-800 text-slate-300 text-sm font-semibold hover:bg-slate-700">Cancel</button>
+                    <button type="submit" class="w-1/2 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-500 shadow-lg shadow-indigo-600/30">Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase Config & App ID
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'blessed-rose-portfolio';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "demo-key",
+            authDomain: "demo-app.firebaseapp.com",
+            projectId: "demo-app",
+            storageBucket: "demo-app.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:demo"
+        };
+
+        // Obfuscated password hash for 'riacutelang12345' (Base64) - Requirement #5 & #6
+        const PASS_HASH = "cmlhY3V0ZWxhbmcxMjM0NQ==";
+
+        let app, auth, db;
+        let isDevMode = false;
+        let currentUploadedMediaBase64 = '';
+        let currentUploadedMediaType = 'image';
+
+        // Master Data Object containing exact user requirements
+        let portfolioData = {
+            personalInfo: {
+                name: "Blessed Rose A. Advincula",
+                age: "16",
+                birthday: "March 24 2010",
+                civilStatus: "Single",
+                messenger: "m.me/desseldesor.advincula",
+                address: "San Narciso, Zambales, Philippines",
+                languages: "English, Tagalog (Fluent)",
+                phone: "09702067504",
+                email: "advinculablessedrose@gmail.com",
+                gender: "Female",
+                heroSummary: "A motivated, detail-oriented, and ambitious high school student based in San Narciso, Zambales. Equipped with strong technical, analytical, and communication skills, ready to contribute effectively to dynamic team environments.",
+                avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+            },
+            education: [
+                {
+                    type: "Primary Education",
+                    schoolName: "San Jose Patrocinio School",
+                    tenure: "2016 – 2022",
+                    honors: "With Academic Honors / Academic Excellence Awardee"
+                },
+                {
+                    type: "Secondary Education",
+                    schoolName: "La Paz National Highschool",
+                    tenure: "2022 – Present",
+                    honors: "With Honors, Active Student Leader"
+                }
+            ],
+            experience: [
+                {
+                    company: "Student Council & School Organizations",
+                    tenure: "2023 – 2024",
+                    position: "Student Representative / Activity Coordinator",
+                    description: "Organized school events, assisted teachers with administrative tasks, managed student communications, and led youth initiatives within the school community."
+                }
+            ],
+            skills: [
+                { title: "Communication", subtitle: "Fluent English & Tagalog", icon: "fa-comments" },
+                { title: "Computer Literacy", subtitle: "MS Office & Digital Media", icon: "fa-laptop-code" },
+                { title: "Team Leadership", subtitle: "Collaboration & Event Lead", icon: "fa-people-group" },
+                { title: "Creative Arts", subtitle: "Design & Presentation", icon: "fa-palette" }
+            ],
+            projects: [
+                {
+                    title: "Community Youth Leadership Drive",
+                    description: "Spearheaded a youth-led community initiative in San Narciso, encouraging educational engagement, organizing clean-up drives, and facilitating mentorship sessions for junior students.",
+                    mediaUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+                    mediaType: "image",
+                    year: "2024",
+                    badge: "Verified Accomplishment"
+                },
+                {
+                    title: "Academic Research & Science Fair Presentation",
+                    description: "Co-authored and presented an innovative environmental research paper during the High School Science & Tech Expo, receiving high commendations for presentation excellence.",
+                    mediaUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+                    mediaType: "image",
+                    year: "2023",
+                    badge: "Award Winner"
+                }
+            ],
+            references: [
+                {
+                    name: "Agnes Padilla",
+                    position: "SHS Teacher",
+                    institution: "Claver, Surigao del Norte",
+                    address: "Claver, Surigao del Norte",
+                    phone: "09772850244",
+                    initials: "AP"
+                },
+                {
+                    name: "Nelson Jay Abuyo",
+                    position: "SHS Teacher I",
+                    institution: "San Felipe, Zambales",
+                    address: "San Felipe, Zambales",
+                    phone: "09283899425",
+                    initials: "NA"
+                },
+                {
+                    name: "Jim Irish Mantes",
+                    position: "SHS Teacher",
+                    institution: "San Narciso, Zambales",
+                    address: "San Narciso, Zambales",
+                    phone: "09099158294",
+                    initials: "JM"
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Load Local Backup first if available
+            const localSaved = localStorage.getItem('blessed_rose_portfolio_data');
+            if (localSaved) {
+                try {
+                    portfolioData = JSON.parse(localSaved);
+                    renderAllData();
+                } catch(e) { console.error("Local storage error:", e); }
+            }
+
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // Cloud Storage Reference (Firestore path)
+                const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'portfolioData', 'main');
+                
+                onSnapshot(docRef, (docSnap) => {
+                    if (docSnap.exists()) {
+                        const data = docSnap.data();
+                        if (data && data.portfolio) {
+                            portfolioData = data.portfolio;
+                            renderAllData();
+                            localStorage.setItem('blessed_rose_portfolio_data', JSON.stringify(portfolioData));
+                        }
+                    } else {
+                        setDoc(docRef, { portfolio: portfolioData }).catch(err => console.log("Initial Firestore sync err", err));
+                    }
+                }, (error) => {
+                    console.warn("Firestore listener fallback mode:", error);
+                    renderAllData();
+                });
+
+            } catch (err) {
+                console.warn("Firebase initialization local mode:", err);
+                renderAllData();
+            }
+        });
+
+        window.renderAllData = function() {
+            const p = portfolioData.personalInfo;
+
+            // Hero Section
+            document.getElementById('displayHeroName').textContent = p.name || 'Blessed Rose A. Advincula';
+            document.getElementById('displayHeroSummary').textContent = p.heroSummary || '';
+            document.getElementById('statLocation').textContent = p.address ? p.address.split(',')[0] + ', Zambales' : 'San Narciso, Zambales';
+            document.getElementById('statLanguages').textContent = p.languages || 'English & Tagalog';
+            if (p.avatarUrl) document.getElementById('heroAvatarImg').src = p.avatarUrl;
+
+            // Personal Information
+            document.getElementById('valName').textContent = p.name;
+            document.getElementById('valAge').textContent = p.age;
+            document.getElementById('valBirthday').textContent = p.birthday;
+            document.getElementById('valGender').textContent = p.gender;
+            document.getElementById('valCivilStatus').textContent = p.civilStatus;
+            document.getElementById('valAddress').textContent = p.address;
+            document.getElementById('valLanguages').textContent = p.languages;
+            document.getElementById('valPhone').textContent = p.phone;
+            document.getElementById('valEmail').textContent = p.email;
+            
+            const msgLink = document.getElementById('valMessengerLink');
+            const cleanMsg = p.messenger.replace('https://', '').replace('m.me/', '');
+            msgLink.href = 'https://m.me/' + cleanMsg;
+            msgLink.innerHTML = `<i class="fa-brands fa-facebook-messenger"></i> m.me/${cleanMsg}`;
+
+            // Input Fields in Dev Mode
+            document.getElementById('inputName').value = p.name || '';
+            document.getElementById('inputAge').value = p.age || '';
+            document.getElementById('inputBirthday').value = p.birthday || '';
+            document.getElementById('inputGender').value = p.gender || 'Female';
+            document.getElementById('inputCivilStatus').value = p.civilStatus || '';
+            document.getElementById('inputPhone').value = p.phone || '';
+            document.getElementById('inputEmail').value = p.email || '';
+            document.getElementById('inputMessenger').value = p.messenger || '';
+            document.getElementById('inputAddress').value = p.address || '';
+            document.getElementById('inputLanguages').value = p.languages || '';
+
+            // Contact Section
+            document.getElementById('contactPhone').textContent = p.phone;
+            document.getElementById('contactEmail').textContent = p.email;
+            document.getElementById('contactMessenger').textContent = 'm.me/' + cleanMsg;
+
+            renderEducationList();
+            renderExperienceList();
+            renderSkillsList();
+            renderProjectsList();
+            renderReferencesList();
+        };
+
+        function renderEducationList() {
+            const container = document.getElementById('educationList');
+            container.innerHTML = '';
+            portfolioData.education.forEach((edu, idx) => {
+                const card = document.createElement('div');
+                card.className = "glass-card p-6 rounded-2xl glass-card-hover space-y-3 relative";
+                card.innerHTML = `
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-indigo-400 font-semibold uppercase tracking-wider border border-slate-700">${edu.type || 'Education'}</span>
+                            <h3 class="text-xl font-bold text-white mt-2">${edu.schoolName}</h3>
+                        </div>
+                        <i class="fa-solid fa-graduation-cap text-2xl text-slate-600"></i>
+                    </div>
+                    <div class="space-y-1 text-sm">
+                        <p class="text-slate-300"><strong class="text-slate-400">Tenure / Years:</strong> ${edu.tenure}</p>
+                        <p class="text-slate-300"><strong class="text-slate-400">Honors Received:</strong> <span class="text-amber-300 font-medium">${edu.honors}</span></p>
+                    </div>
+                    ${isDevMode ? `<button onclick="deleteEdu(${idx})" class="absolute top-4 right-4 text-xs bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white px-2 py-1 rounded-lg transition"><i class="fa-solid fa-trash"></i></button>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderExperienceList() {
+            const container = document.getElementById('experienceList');
+            container.innerHTML = '';
+            portfolioData.experience.forEach((exp, idx) => {
+                const item = document.createElement('div');
+                item.className = "glass-card p-6 rounded-2xl glass-card-hover space-y-2 relative";
+                item.innerHTML = `
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h3 class="text-xl font-bold text-white">${exp.company}</h3>
+                        <span class="text-xs px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">${exp.tenure}</span>
+                    </div>
+                    <p class="text-md font-semibold text-emerald-400">${exp.position}</p>
+                    <p class="text-sm text-slate-300">${exp.description || ''}</p>
+                    ${isDevMode ? `<button onclick="deleteExp(${idx})" class="mt-2 text-xs bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white px-2.5 py-1 rounded-lg transition"><i class="fa-solid fa-trash mr-1"></i> Remove Position</button>` : ''}
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function renderSkillsList() {
+            const container = document.getElementById('skillsContainer');
+            container.innerHTML = '';
+            portfolioData.skills.forEach((skill, idx) => {
+                const card = document.createElement('div');
+                card.className = "glass-card p-4 rounded-xl text-center space-y-2 glass-card-hover relative";
+                card.innerHTML = `
+                    <i class="fa-solid ${skill.icon || 'fa-star'} text-2xl text-indigo-400"></i>
+                    <h4 class="font-bold text-white text-sm">${skill.title}</h4>
+                    <p class="text-xs text-slate-400">${skill.subtitle}</p>
+                    ${isDevMode ? `<button onclick="deleteSkill(${idx})" class="absolute top-1 right-1 text-xs text-red-400 hover:text-red-300 p-1"><i class="fa-solid fa-xmark"></i></button>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderProjectsList() {
+            const container = document.getElementById('projectsGrid');
+            container.innerHTML = '';
+            portfolioData.projects.forEach((proj, idx) => {
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-2xl overflow-hidden glass-card-hover flex flex-col justify-between relative";
+                
+                let mediaHtml = '';
+                if (proj.mediaType === 'video') {
+                    mediaHtml = `<video src="${proj.mediaUrl}" controls class="w-full h-full object-cover"></video>`;
+                } else {
+                    mediaHtml = `<img src="${proj.mediaUrl}" alt="${proj.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x400/1e293b/ffffff?text=Project+Proof'">`;
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 bg-slate-800 overflow-hidden">
+                            ${mediaHtml}
+                            <span class="absolute top-3 right-3 px-2.5 py-1 bg-slate-900/80 backdrop-blur-md text-xs text-indigo-300 font-semibold rounded-full border border-indigo-500/30">
+                                <i class="fa-solid ${proj.mediaType === 'video' ? 'fa-video' : 'fa-image'} mr-1"></i> ${proj.mediaType === 'video' ? 'Video Proof' : 'Image Proof'}
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-white">${proj.title}</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed">${proj.description}</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 text-xs text-slate-400 flex justify-between items-center border-t border-slate-800 mt-4">
+                        <span><i class="fa-regular fa-calendar mr-1"></i> ${proj.year || 'Completed'}</span>
+                        <span class="text-emerald-400 font-medium">${proj.badge || 'Verified Accomplishment'}</span>
+                    </div>
+                    ${isDevMode ? `<button onclick="deleteProject(${idx})" class="absolute top-3 left-3 text-xs bg-red-600 hover:bg-red-500 text-white px-3 py-1.5 rounded-lg font-semibold shadow-lg transition"><i class="fa-solid fa-trash mr-1"></i> Delete Project</button>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderReferencesList() {
+            const container = document.getElementById('referencesList');
+            container.innerHTML = '';
+            portfolioData.references.forEach((ref, idx) => {
+                const card = document.createElement('div');
+                card.className = "glass-card p-6 rounded-2xl glass-card-hover space-y-3 relative";
+                card.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-600 to-pink-600 text-white font-bold flex items-center justify-center text-lg border border-indigo-500/30 shadow">
+                            ${ref.initials || 'REF'}
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">${ref.name}</h3>
+                            <p class="text-xs text-indigo-400 font-medium">${ref.position}</p>
+                        </div>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1.5 pt-3 border-t border-slate-800/80">
+                        <p><i class="fa-solid fa-location-dot text-indigo-400 mr-2"></i><strong>Address:</strong> ${ref.address || 'Zambales, Philippines'}</p>
+                        ${ref.phone ? `<p><i class="fa-solid fa-phone text-emerald-400 mr-2"></i><strong>Contact:</strong> ${ref.phone}</p>` : ''}
+                    </div>
+                    ${isDevMode ? `<button onclick="deleteRef(${idx})" class="absolute top-4 right-4 text-xs bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white px-2 py-1 rounded-lg transition"><i class="fa-solid fa-trash"></i></button>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.toggleDeveloperMode = function() {
+            if (isDevMode) {
+                isDevMode = false;
+                applyDevModeUI();
+            } else {
+                document.getElementById('devPasswordInput').value = '';
+                document.getElementById('passwordError').classList.add('hidden');
+                document.getElementById('passwordModal').classList.remove('hidden');
+            }
+        };
+
+        window.closePasswordModal = function() {
+            document.getElementById('passwordModal').classList.add('hidden');
+        };
+
+        window.verifyDevPassword = function(event) {
+            event.preventDefault();
+            const entered = document.getElementById('devPasswordInput').value;
+            
+            // Password hash comparison: Base64 check for 'riacutelang12345'
+            if (btoa(entered) === PASS_HASH) {
+                isDevMode = true;
+                closePasswordModal();
+                applyDevModeUI();
+            } else {
+                document.getElementById('passwordError').classList.remove('hidden');
+            }
+        };
+
+        function applyDevModeUI() {
+            const badge = document.getElementById('viewModeBadge');
+            const modeBtnText = document.getElementById('modeBtnText');
+            const modeIcon = document.getElementById('modeIcon');
+            const banner = document.getElementById('devModeBanner');
+            const personalInfoView = document.getElementById('personalInfoView');
+            const personalInfoEditForm = document.getElementById('personalInfoEditForm');
+            const devAvatarEdit = document.getElementById('devAvatarEdit');
+
+            const addEduBtn = document.getElementById('addEducationBtn');
+            const addExpBtn = document.getElementById('addExpBtn');
+            const addSkillBtn = document.getElementById('addSkillBtn');
+            const addProjectBtn = document.getElementById('addProjectBtn');
+            const addRefBtn = document.getElementById('addRefBtn');
+
+            if (isDevMode) {
+                badge.textContent = "Developer View (Editable)";
+                badge.className = "text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-medium inline-block border border-amber-500/30";
+                modeBtnText.textContent = "Exit Dev Mode";
+                modeIcon.className = "fa-solid fa-unlock";
+                banner.classList.remove('hidden');
+
+                personalInfoView.classList.add('hidden');
+                personalInfoEditForm.classList.remove('hidden');
+                devAvatarEdit.classList.remove('hidden');
+
+                addEduBtn.classList.remove('hidden');
+                addEduBtn.classList.add('inline-flex');
+
+                addExpBtn.classList.remove('hidden');
+                addExpBtn.classList.add('inline-flex');
+
+                addSkillBtn.classList.remove('hidden');
+                addSkillBtn.classList.add('inline-flex');
+
+                addProjectBtn.classList.remove('hidden');
+                addProjectBtn.classList.add('inline-flex');
+
+                addRefBtn.classList.remove('hidden');
+                addRefBtn.classList.add('inline-flex');
+
+            } else {
+                badge.textContent = "Employer View (Read-Only)";
+                badge.className = "text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-medium inline-block border border-emerald-500/30";
+                modeBtnText.textContent = "Developer Mode";
+                modeIcon.className = "fa-solid fa-lock";
+                banner.classList.add('hidden');
+
+                personalInfoView.classList.remove('hidden');
+                personalInfoEditForm.classList.add('hidden');
+                devAvatarEdit.classList.add('hidden');
+
+                addEduBtn.classList.add('hidden');
+                addExpBtn.classList.add('hidden');
+                addSkillBtn.classList.add('hidden');
+                addProjectBtn.classList.add('hidden');
+                addRefBtn.classList.add('hidden');
+            }
+
+            renderAllData();
+        }
+
+        window.saveAllDataToCloud = async function() {
+            portfolioData.personalInfo.name = document.getElementById('inputName').value;
+            portfolioData.personalInfo.age = document.getElementById('inputAge').value;
+            portfolioData.personalInfo.birthday = document.getElementById('inputBirthday').value;
+            portfolioData.personalInfo.gender = document.getElementById('inputGender').value;
+            portfolioData.personalInfo.civilStatus = document.getElementById('inputCivilStatus').value;
+            portfolioData.personalInfo.phone = document.getElementById('inputPhone').value;
+            portfolioData.personalInfo.email = document.getElementById('inputEmail').value;
+            portfolioData.personalInfo.messenger = document.getElementById('inputMessenger').value;
+            portfolioData.personalInfo.address = document.getElementById('inputAddress').value;
+            portfolioData.personalInfo.languages = document.getElementById('inputLanguages').value;
+
+            localStorage.setItem('blessed_rose_portfolio_data', JSON.stringify(portfolioData));
+
+            try {
+                if (db) {
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'portfolioData', 'main');
+                    await setDoc(docRef, { portfolio: portfolioData });
+                }
+                showToast("All changes saved & synced across devices!");
+            } catch (err) {
+                console.error("Firestore sync error:", err);
+                showToast("Saved locally on this device!");
+            }
+
+            renderAllData();
+        };
+
+        // Profile Photo Upload Function
+        window.uploadHeroAvatar = function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                portfolioData.personalInfo.avatarUrl = e.target.result;
+                document.getElementById('heroAvatarImg').src = e.target.result;
+                saveAllDataToCloud();
+            };
+            reader.readAsDataURL(file);
+        };
+
+        window.addEducationCard = function() {
+            const schoolName = prompt("Enter School Name:", "New School");
+            if (!schoolName) return;
+            const tenure = prompt("Enter Tenure / Years:", "2020 – 2024");
+            const honors = prompt("Enter Honors Received:", "Academic Honors");
+            
+            portfolioData.education.push({
+                type: "Education",
+                schoolName: schoolName,
+                tenure: tenure || "2020 – 2024",
+                honors: honors || "None"
+            });
+            saveAllDataToCloud();
+        };
+
+        window.deleteEdu = function(idx) {
+            portfolioData.education.splice(idx, 1);
+            saveAllDataToCloud();
+        };
+
+        window.addExperienceCard = function() {
+            const company = prompt("Enter Company or Organization Name:", "Organization Name");
+            if (!company) return;
+            const position = prompt("Enter Job Position:", "Position Title");
+            const tenure = prompt("Enter Tenure / Period:", "2023 – 2024");
+            const description = prompt("Enter Description:", "Key responsibilities and achievements...");
+
+            portfolioData.experience.push({
+                company: company,
+                position: position || "Staff",
+                tenure: tenure || "2024",
+                description: description || ""
+            });
+            saveAllDataToCloud();
+        };
+
+        window.deleteExp = function(idx) {
+            portfolioData.experience.splice(idx, 1);
+            saveAllDataToCloud();
+        };
+
+        window.addSkillItem = function() {
+            const title = prompt("Enter Skill Title:", "New Skill");
+            if (!title) return;
+            const subtitle = prompt("Enter Skill Subtitle / Proficiency:", "Proficient");
+
+            portfolioData.skills.push({
+                title: title,
+                subtitle: subtitle || "Skilled",
+                icon: "fa-circle-check"
+            });
+            saveAllDataToCloud();
+        };
+
+        window.deleteSkill = function(idx) {
+            portfolioData.skills.splice(idx, 1);
+            saveAllDataToCloud();
+        };
+
+        window.openAddProjectModal = function() {
+            document.getElementById('newProjTitle').value = '';
+            document.getElementById('newProjDesc').value = '';
+            document.getElementById('newProjYear').value = new Date().getFullYear();
+            document.getElementById('newProjMediaFile').value = '';
+            document.getElementById('mediaPreviewContainer').classList.add('hidden');
+            currentUploadedMediaBase64 = '';
+            currentUploadedMediaType = 'image';
+            document.getElementById('projectModal').classList.remove('hidden');
+        };
+
+        window.closeAddProjectModal = function() {
+            document.getElementById('projectModal').classList.add('hidden');
+        };
+
+        window.previewMediaUpload = function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const isVideo = file.type.startsWith('video/');
+            currentUploadedMediaType = isVideo ? 'video' : 'image';
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                currentUploadedMediaBase64 = e.target.result;
+                const container = document.getElementById('mediaPreviewContainer');
+                const imgPre = document.getElementById('imagePreview');
+                const vidPre = document.getElementById('videoPreview');
+
+                container.classList.remove('hidden');
+                if (isVideo) {
+                    imgPre.classList.add('hidden');
+                    vidPre.classList.remove('hidden');
+                    vidPre.src = e.target.result;
+                } else {
+                    vidPre.classList.add('hidden');
+                    imgPre.classList.remove('hidden');
+                    imgPre.src = e.target.result;
+                }
+            };
+            reader.readAsDataURL(file);
+        };
+
+        window.handleSaveNewProject = function(event) {
+            event.preventDefault();
+            const title = document.getElementById('newProjTitle').value;
+            const desc = document.getElementById('newProjDesc').value;
+            const year = document.getElementById('newProjYear').value || '2024';
+
+            const fallbackImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80";
+
+            portfolioData.projects.unshift({
+                title: title,
+                description: desc,
+                mediaUrl: currentUploadedMediaBase64 || fallbackImg,
+                mediaType: currentUploadedMediaType,
+                year: year,
+                badge: "Verified Accomplishment"
+            });
+
+            closeAddProjectModal();
+            saveAllDataToCloud();
+        };
+
+        window.deleteProject = function(idx) {
+            portfolioData.projects.splice(idx, 1);
+            saveAllDataToCloud();
+        };
+
+        window.addReferenceCard = function() {
+            const name = prompt("Enter Reference Name:", "Reference Name");
+            if (!name) return;
+            const position = prompt("Enter Job Position:", "Teacher / Supervisor");
+            const address = prompt("Enter Address:", "San Narciso, Zambales");
+            const phone = prompt("Enter Contact Number:", "09123456789");
+
+            const initials = name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+
+            portfolioData.references.push({
+                name: name,
+                position: position || "Reference",
+                address: address || "Zambales, Philippines",
+                phone: phone || "",
+                initials: initials || "REF"
+            });
+            saveAllDataToCloud();
+        };
+
+        window.deleteRef = function(idx) {
+            portfolioData.references.splice(idx, 1);
+            saveAllDataToCloud();
+        };
+
+        function showToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 bg-indigo-600 text-white px-5 py-3 rounded-xl shadow-2xl z-50 text-sm font-semibold flex items-center gap-2 animate-bounce";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${msg}`;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3500);
+        }
+
+        window.copyPortfolioLink = function() {
+            const currentUrl = window.location.href;
+            
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = currentUrl;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast("Portfolio link copied to clipboard!");
+        };
+
+        window.toggleMobileNav = function() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        };
+
+        window.closeMobileNav = function() {
+            document.getElementById('mobileNav').classList.add('hidden');
+        };
+    </script>
+</body>
+</html>
